@@ -1,4 +1,4 @@
-[
+module.exports = [
     {
         "name": "BSNL",
         "imageURL": "/images/bsnl.png",
