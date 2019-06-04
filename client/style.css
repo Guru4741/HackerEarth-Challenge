@@ -77,7 +77,13 @@ body {
       margin-top: 40px; }
   .ispDetails .ispInfo {
     margin-top: 20px;
-    flex: 0 0 40%; }
+    flex: 0 0 40%;
+    position: relative; }
+    .ispDetails .ispInfo--empty {
+      position: absolute;
+      display: block; }
+    .ispDetails .ispInfo--notEmpty {
+      display: none; }
     .ispDetails .ispInfo .ispInfoName {
       display: flex;
       background: #c9fdc9;

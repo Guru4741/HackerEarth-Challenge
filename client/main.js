@@ -11,9 +11,7 @@ let ispSelected = false;
 const ISPs = [];
 
 //Display view for ISP Details 
-if (ispSelected == false) {
-    ispInfo.style.display = "none"
-}
+checkSelection();
 
 //Fetch Call to API
 fetch('http://localhost:7676')  //Server is running on port 7676
@@ -47,15 +45,8 @@ function listISPNames(e) {
     //Attaching Event Listener to arrow
     arrowIcon.addEventListener('click', () => {
         ispSelected = true;
-        ispInfo.style.display = "block";
-        if (ispSelected)
-            displayISP(e);
-        // if (!el.classList.contains('selected')) {
-        //     console.log('yes')
-        //     el.classList.add('selected');
-        // } else {
-        //     el.classList.remove('selected');
-        // }
+        checkSelection();
+        displayISP(e);
     });
 
     el.classList.add('ispName');
@@ -70,42 +61,17 @@ function listISPNames(e) {
     ispNames.appendChild(el);
 }
 
-//Attaching Event to Search Box
-searchBox.addEventListener('keypress', (e) => {
-    ispSelected = false;
-    ispInfo.style.display = "none"
-    if (e.keyCode === 13) {
-        const searchKeyword = searchBox.value.toLowerCase();
-        const searchFound = ISPs.filter(each => each.name.toLowerCase() === searchKeyword);
-        if (searchFound.length !== 0) {
-            console.log(searchFound[0])
-            ispNames.innerHTML = "";
-            listISPNames(searchFound[0]);
-        } else if (searchKeyword === "") {
-            ispNames.innerHTML = "";
-            ISPs.forEach(each => listISPNames(each))
-        } else {
-            ispNames.innerHTML = "No Such Provider exists."
-        }
+
+//Check whether any List item is selected or not
+function checkSelection() {
+    if (ispSelected === false) {
+        ispInfo.childNodes[1].style.display = 'block';
+        ispInfo.childNodes[3].style.display = 'none';
+    } else {
+        ispInfo.childNodes[1].style.display = 'none';
+        ispInfo.childNodes[3].style.display = 'block';
     }
-})
-
-//Attaching Event Download Button
-btnDownload.addEventListener('click', () => {
-    downloadPDF()
-})
-
-
-//Attaching Event to ispNames Box
-ispNames.addEventListener('click', (e) => {
-    // console.log([...e.target.childNodes])
-    if (e.target.classList.contains('arrow')) {
-        [...e.target.parentNode.parentNode.childNodes].forEach(each => {
-            each.classList.remove('selected')
-        });
-        e.target.parentNode.classList.add('selected')
-    }
-})
+}
 
 //ISP list display function
 function displayISP(e) {
@@ -141,3 +107,42 @@ function downloadPDF() {
         })
         .catch(err => console.log(err));
 }
+
+
+//Attaching Event to Search Box
+searchBox.addEventListener('keypress', (e) => {
+
+    if (e.keyCode === 13) {
+        const searchKeyword = searchBox.value.toLowerCase();
+        const searchFound = ISPs.filter(each => each.name.toLowerCase() === searchKeyword);
+        if (searchFound.length !== 0) {
+            console.log(searchFound[0])
+            ispNames.innerHTML = "";
+            listISPNames(searchFound[0]);
+        } else if (searchKeyword === "") {
+            ispNames.innerHTML = "";
+            ISPs.forEach(each => listISPNames(each))
+        } else {
+            ispNames.innerHTML = "No Such Provider exists."
+            ispSelected = false;
+            checkSelection();
+        }
+    }
+})
+
+//Attaching Event Download Button
+btnDownload.addEventListener('click', () => {
+    downloadPDF()
+})
+
+
+//Attaching Event to ispNames Box
+ispNames.addEventListener('click', (e) => {
+    // console.log([...e.target.childNodes])
+    if (e.target.classList.contains('arrow')) {
+        [...e.target.parentNode.parentNode.childNodes].forEach(each => {
+            each.classList.remove('selected')
+        });
+        e.target.parentNode.classList.add('selected')
+    }
+})

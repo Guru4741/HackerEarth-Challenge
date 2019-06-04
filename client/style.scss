@@ -119,6 +119,16 @@ $background-color: #98FB98;
     .ispInfo {
         margin-top: 20px;
         flex: 0 0 40%;
+        position: relative;
+
+        &--empty{
+            position: absolute;
+            display: block;
+        }
+
+        &--notEmpty {
+            display: none;
+        }
 
         .ispInfoName {
             display: flex;
