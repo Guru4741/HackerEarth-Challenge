@@ -3,6 +3,7 @@ const ispNames = document.querySelector('.ispNames');
 const ispInfo = document.querySelector('.ispInfo');
 const btnDownload = document.querySelector('.buttons__download');
 const searchBox = document.querySelector('.searchBox');
+const homeIcom = document.querySelector('.ispSearchBar p');
 
 //Flag for dislay ISP details
 let ispSelected = false;
@@ -145,4 +146,12 @@ ispNames.addEventListener('click', (e) => {
         });
         e.target.parentNode.classList.add('selected')
     }
+})
+
+homeIcom.addEventListener('click', () => {
+    ispNames.innerHTML = "";
+    ISPs.forEach(each => listISPNames(each))
+    searchBox.value = "";
+    ispSelected = false;
+    checkSelection();
 })

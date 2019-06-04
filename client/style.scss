@@ -86,6 +86,11 @@ $background-color: #98FB98;
             position: fixed;
             background-color: #ffffff;
             height: 30px;
+            padding-bottom: 10px;
+
+            & p{
+                cursor: pointer;
+            }
             
 
             .searchBox {
@@ -114,6 +119,39 @@ $background-color: #98FB98;
         .ispNames {
             margin-top: 40px;
         }
+
+        .ispSorting {
+            width: 100%;
+            position: sticky;
+            z-index: 3;
+            background: #fff;        
+            height: 35px;
+            bottom: 0px;
+            padding-top: 10px;
+            display: flex;
+            justify-content: space-around;
+
+            .sortBtn, .sortOptions {
+                color: $primary-green-color;
+                padding: 5px 10px;
+                cursor: pointer;
+                font-size: 14px;
+                border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                -ms-border-radius: 5px;
+                -o-border-radius: 5px;   
+            }
+
+            .sortOptions {
+                border: 1pt solid rgb(216,216,216);
+
+                & input[type=radio] {
+                    margin-right: 10px;
+                    
+                }
+            }
+        }
     }
 
     .ispInfo {
@@ -123,7 +161,10 @@ $background-color: #98FB98;
 
         &--empty{
             position: absolute;
-            display: block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
 
         &--notEmpty {

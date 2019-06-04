@@ -29,12 +29,19 @@
                 <input type="text" class="searchBox" placeholder="Search (by ISP name, price, rating)">
             </div>
             <div class="ispNames"></div>
+            <div class="ispSorting">
+                <button class="sortBtn btn"><span><i class="fas fa-layer-group"></i></span> Sort By</button>
+                <fieldset class="sortOptions">
+                    <input type="radio" name="sorting" value="name">Name
+                    <input type="radio" name="sorting" value="price">Price
+                </fieldset>
+            </div>
         </div>
 
 
         <div class="ispInfo">
             <div class="ispInfo--empty">
-                Nothing Selected Yet
+                <p>Nothing Selected Yet</p>
             </div>
             <div class="ispInfo--notEmpty">
                 <div class="ispBasicInfo">

@@ -56,7 +56,10 @@ body {
       width: inherit;
       position: fixed;
       background-color: #ffffff;
-      height: 30px; }
+      height: 30px;
+      padding-bottom: 10px; }
+      .ispDetails .ispAllList .ispSearchBar p {
+        cursor: pointer; }
       .ispDetails .ispAllList .ispSearchBar .searchBox {
         border: 1pt solid #666666;
         width: 40%;
@@ -75,13 +78,40 @@ body {
           background-image: none; }
     .ispDetails .ispAllList .ispNames {
       margin-top: 40px; }
+    .ispDetails .ispAllList .ispSorting {
+      width: 100%;
+      position: sticky;
+      z-index: 3;
+      background: #fff;
+      height: 35px;
+      bottom: 0px;
+      padding-top: 10px;
+      display: flex;
+      justify-content: space-around; }
+      .ispDetails .ispAllList .ispSorting .sortBtn, .ispDetails .ispAllList .ispSorting .sortOptions {
+        color: #0B6623;
+        padding: 5px 10px;
+        cursor: pointer;
+        font-size: 14px;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px; }
+      .ispDetails .ispAllList .ispSorting .sortOptions {
+        border: 1pt solid #d8d8d8; }
+        .ispDetails .ispAllList .ispSorting .sortOptions input[type=radio] {
+          margin-right: 10px; }
   .ispDetails .ispInfo {
     margin-top: 20px;
     flex: 0 0 40%;
     position: relative; }
     .ispDetails .ispInfo--empty {
       position: absolute;
-      display: block; }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center; }
     .ispDetails .ispInfo--notEmpty {
       display: none; }
     .ispDetails .ispInfo .ispInfoName {
