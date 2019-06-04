@@ -48,5 +48,55 @@ module.exports = [
         "email": "121@ahathway.com",
         "ratings": 4,
         "desc": "Our internet plans are now available at never before price. You can also opt for a voice top-up pack and enjoy unlimited local and STD calls from your landline"
+    },
+    {
+        "name": "Hathway",
+        "imageURL": "/images/hathway.png",
+        "price": 110,
+        "speed": 50,
+        "phone": "080-44444121",
+        "email": "121@ahathway.com",
+        "ratings": 4,
+        "desc": "Our internet plans are now available at never before price. You can also opt for a voice top-up pack and enjoy unlimited local and STD calls from your landline"
+    },
+    {
+        "name": "Hathway",
+        "imageURL": "/images/hathway.png",
+        "price": 110,
+        "speed": 50,
+        "phone": "080-44444121",
+        "email": "121@ahathway.com",
+        "ratings": 4,
+        "desc": "Our internet plans are now available at never before price. You can also opt for a voice top-up pack and enjoy unlimited local and STD calls from your landline"
+    },
+    {
+        "name": "Hathway",
+        "imageURL": "/images/hathway.png",
+        "price": 110,
+        "speed": 50,
+        "phone": "080-44444121",
+        "email": "121@ahathway.com",
+        "ratings": 4,
+        "desc": "Our internet plans are now available at never before price. You can also opt for a voice top-up pack and enjoy unlimited local and STD calls from your landline"
+    },
+    {
+        "name": "Hathway",
+        "imageURL": "/images/hathway.png",
+        "price": 110,
+        "speed": 50,
+        "phone": "080-44444121",
+        "email": "121@ahathway.com",
+        "ratings": 4,
+        "desc": "Our internet plans are now available at never before price. You can also opt for a voice top-up pack and enjoy unlimited local and STD calls from your landline"
+    },
+    {
+        "name": "Hathway",
+        "imageURL": "/images/hathway.png",
+        "price": 110,
+        "speed": 50,
+        "phone": "080-44444121",
+        "email": "121@ahathway.com",
+        "ratings": 4,
+        "desc": "Our internet plans are now available at never before price. You can also opt for a voice top-up pack and enjoy unlimited local and STD calls from your landline"
     }
 ]

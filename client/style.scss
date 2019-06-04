@@ -72,12 +72,21 @@ $background-color: #98FB98;
     .ispAllList {
         margin-top: 20px;
         flex: 0 0 55%;
+        height: 310px;
+        overflow-y: scroll;
+        position: relative;
+        width: 55%;
 
         .ispSearchBar {
             display: flex;
             align-items: center;
             justify-content: space-between;
             margin-bottom: 10px;
+            width: inherit;
+            position: fixed;
+            background-color: #ffffff;
+            height: 30px;
+            
 
             .searchBox {
                 border: 1pt solid lighten($color: #000000, $amount: 40%);
@@ -100,6 +109,10 @@ $background-color: #98FB98;
                     
                 }
 }               
+        }
+
+        .ispNames {
+            margin-top: 40px;
         }
     }
 
@@ -201,5 +214,9 @@ $background-color: #98FB98;
 
  
 
-
+//Change Background Class
+.selected {
+    background-color: darken($color: $border-color, $amount: 10%);
+    color: #ffffff;
+}
  

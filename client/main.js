@@ -4,8 +4,16 @@ const ispInfo = document.querySelector('.ispInfo');
 const btnDownload = document.querySelector('.buttons__download');
 const searchBox = document.querySelector('.searchBox');
 
+//Flag for dislay ISP details
+let ispSelected = false;
+
 //Array to store ISP list
 const ISPs = [];
+
+//Display view for ISP Details 
+if (ispSelected == false) {
+    ispInfo.style.display = "none"
+}
 
 //Fetch Call to API
 fetch('http://localhost:7676')  //Server is running on port 7676
@@ -34,11 +42,20 @@ function listISPNames(e) {
     const arrowIcon = document.createElement('i');
 
     dataIcon.classList.add('fas', 'fa-database')
-    arrowIcon.classList.add('far', 'fa-arrow-alt-circle-right');
+    arrowIcon.classList.add('far', 'fa-arrow-alt-circle-right', 'arrow');
 
     //Attaching Event Listener to arrow
     arrowIcon.addEventListener('click', () => {
-        displayISP(e);
+        ispSelected = true;
+        ispInfo.style.display = "block";
+        if (ispSelected)
+            displayISP(e);
+        // if (!el.classList.contains('selected')) {
+        //     console.log('yes')
+        //     el.classList.add('selected');
+        // } else {
+        //     el.classList.remove('selected');
+        // }
     });
 
     el.classList.add('ispName');
@@ -55,6 +72,8 @@ function listISPNames(e) {
 
 //Attaching Event to Search Box
 searchBox.addEventListener('keypress', (e) => {
+    ispSelected = false;
+    ispInfo.style.display = "none"
     if (e.keyCode === 13) {
         const searchKeyword = searchBox.value.toLowerCase();
         const searchFound = ISPs.filter(each => each.name.toLowerCase() === searchKeyword);
@@ -76,6 +95,17 @@ btnDownload.addEventListener('click', () => {
     downloadPDF()
 })
 
+
+//Attaching Event to ispNames Box
+ispNames.addEventListener('click', (e) => {
+    // console.log([...e.target.childNodes])
+    if (e.target.classList.contains('arrow')) {
+        [...e.target.parentNode.parentNode.childNodes].forEach(each => {
+            each.classList.remove('selected')
+        });
+        e.target.parentNode.classList.add('selected')
+    }
+})
 
 //ISP list display function
 function displayISP(e) {

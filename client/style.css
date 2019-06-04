@@ -43,12 +43,20 @@ body {
   justify-content: space-evenly; }
   .ispDetails .ispAllList {
     margin-top: 20px;
-    flex: 0 0 55%; }
+    flex: 0 0 55%;
+    height: 310px;
+    overflow-y: scroll;
+    position: relative;
+    width: 55%; }
     .ispDetails .ispAllList .ispSearchBar {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 10px; }
+      margin-bottom: 10px;
+      width: inherit;
+      position: fixed;
+      background-color: #ffffff;
+      height: 30px; }
       .ispDetails .ispAllList .ispSearchBar .searchBox {
         border: 1pt solid #666666;
         width: 40%;
@@ -65,6 +73,8 @@ body {
         background-size: 20px 20px; }
         .ispDetails .ispAllList .ispSearchBar .searchBox:focus {
           background-image: none; }
+    .ispDetails .ispAllList .ispNames {
+      margin-top: 40px; }
   .ispDetails .ispInfo {
     margin-top: 20px;
     flex: 0 0 40%; }
@@ -131,3 +141,7 @@ body {
   .ispName :nth-child(4) {
     padding-left: 10px;
     cursor: pointer; }
+
+.selected {
+  background-color: #395830;
+  color: #ffffff; }
