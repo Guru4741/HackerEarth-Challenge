@@ -4,6 +4,7 @@ const ispInfo = document.querySelector('.ispInfo');
 const btnDownload = document.querySelector('.buttons__download');
 const searchBox = document.querySelector('.searchBox');
 const homeIcom = document.querySelector('.ispSearchBar p');
+const sortBtn = document.querySelector('.sortBtn');
 
 //Flag for dislay ISP details
 let ispSelected = false;
@@ -148,10 +149,26 @@ ispNames.addEventListener('click', (e) => {
     }
 })
 
+//Attaching Event to Home Icon
 homeIcom.addEventListener('click', () => {
     ispNames.innerHTML = "";
     ISPs.forEach(each => listISPNames(each))
     searchBox.value = "";
     ispSelected = false;
     checkSelection();
+})
+
+//Attaching Event to Sort Button
+sortBtn.addEventListener('click', () => {
+    const sortBy = document.querySelector('input[name="sorting"]:checked').value;
+    if(sortBy === 'price'){
+        ISPs.sort(function(a,b){return a.price - b.price });
+        ispNames.innerHTML = "";
+        ISPs.forEach(each => listISPNames(each))
+    }
+    if(sortBy === 'speed'){
+        ISPs.sort(function(a,b){return a.speed - b.speed });
+        ispNames.innerHTML = "";
+        ISPs.forEach(each => listISPNames(each))
+    }
 })
