@@ -41,9 +41,30 @@ body {
 .ispDetails {
   display: flex;
   justify-content: space-evenly; }
-  .ispDetails .ispNames {
+  .ispDetails .ispAllList {
     margin-top: 20px;
     flex: 0 0 55%; }
+    .ispDetails .ispAllList .ispSearchBar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px; }
+      .ispDetails .ispAllList .ispSearchBar .searchBox {
+        border: 1pt solid #666666;
+        width: 40%;
+        height: 30px;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        padding-left: 25px;
+        background-image: url("./images/search.png");
+        background-repeat: no-repeat;
+        background-position: 5px 5px;
+        background-size: 20px 20px; }
+        .ispDetails .ispAllList .ispSearchBar .searchBox:focus {
+          background-image: none; }
   .ispDetails .ispInfo {
     margin-top: 20px;
     flex: 0 0 40%; }

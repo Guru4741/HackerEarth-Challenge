@@ -69,10 +69,38 @@ $background-color: #98FB98;
     display: flex;
     justify-content: space-evenly;
 
-    .ispNames {
+    .ispAllList {
         margin-top: 20px;
-
         flex: 0 0 55%;
+
+        .ispSearchBar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+
+            .searchBox {
+                border: 1pt solid lighten($color: #000000, $amount: 40%);
+                width: 40%;
+                height: 30px;
+                border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                -ms-border-radius: 5px;
+                -o-border-radius: 5px;
+                padding-left: 25px;
+
+                background-image:url("./images/search.png");
+                background-repeat:no-repeat;
+                background-position: 5px 5px;
+                background-size: 20px 20px;
+
+                &:focus {
+                    background-image: none;
+                    
+                }
+}               
+        }
     }
 
     .ispInfo {
