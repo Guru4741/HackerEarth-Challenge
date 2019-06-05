@@ -5,6 +5,27 @@
   padding: 0;
   box-sizing: inherit; }
 
+html {
+  font-size: 62.5%; }
+
+/*
+
+0 - 780px:          Phone
+780 - 900px:        Tablet Portrait
+900 - 1200px:       Tablet Landscape
+1200 - 1800px:      Normal Style
+1800px >:           Big Desktop
+
+*/
+/*
+    $breakpoint argument choices :
+        - phone
+        - tab-port
+        - tab-land
+        -  big-desktop
+
+        1em = 16px
+*/
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
@@ -12,100 +33,132 @@ body {
 
 .header {
   display: flex;
-  border: 1pt solid black;
+  border-bottom: 1pt solid black;
   align-items: center;
   justify-content: space-around; }
   .header .logo {
     width: 50px;
     height: 50px; }
   .header .brandName {
-    color: #0B6623; }
+    color: #0B6623;
+    font-size: 3rem; }
+    @media only screen and (max-width: 47.5em) {
+      .header .brandName {
+        font-size: 2rem; } }
   .header .tagLine {
-    color: #50C878; }
+    color: #50C878;
+    font-size: 2rem; }
+    @media only screen and (max-width: 47.5em) {
+      .header .tagLine {
+        display: none; } }
   .header__isp {
     display: flex;
     background: #c9fdc9;
     border: 1.5pt solid #395830;
-    padding: 2px 10px;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px; }
+    padding: .2rem 1rem;
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    font-size: 1.5rem; }
     .header__isp span {
       font-weight: 700; }
+    @media only screen and (max-width: 47.5em) {
+      .header__isp {
+        font-size: 1.2rem; } }
   .header__totalHits::before {
     content: "|";
-    padding: 0 20px; }
+    padding: 0 2rem; }
 
 .ispDetails {
   display: flex;
-  justify-content: space-evenly; }
+  justify-content: space-evenly;
+  font-size: 1.6rem; }
+  @media only screen and (max-width: 56.25em) {
+    .ispDetails {
+      flex-direction: column-reverse; } }
   .ispDetails .ispAllList {
-    margin-top: 20px;
+    margin-top: 2rem;
     flex: 0 0 55%;
-    height: 310px;
+    height: 31rem;
     overflow-y: scroll;
     position: relative;
     width: 55%; }
+    @media only screen and (max-width: 56.25em) {
+      .ispDetails .ispAllList {
+        width: 90%;
+        margin: auto; } }
     .ispDetails .ispAllList .ispSearchBar {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 10px;
+      margin-bottom: 1rem;
       width: inherit;
       position: fixed;
       background-color: #ffffff;
-      height: 30px;
-      padding-bottom: 10px; }
+      height: 3rem;
+      padding-bottom: 1rem; }
       .ispDetails .ispAllList .ispSearchBar p {
         cursor: pointer; }
       .ispDetails .ispAllList .ispSearchBar .searchBox {
         border: 1pt solid #666666;
         width: 40%;
-        height: 30px;
-        border-radius: 5px;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        -ms-border-radius: 5px;
-        -o-border-radius: 5px;
-        padding-left: 25px;
+        height: 3rem;
+        border-radius: .5rem;
+        -webkit-border-radius: .5rem;
+        -moz-border-radius: .5rem;
+        -ms-border-radius: .5rem;
+        -o-border-radius: .5rem;
+        padding-left: 2.5rem;
         background-image: url("./images/search.png");
         background-repeat: no-repeat;
-        background-position: 5px 5px;
-        background-size: 20px 20px; }
+        background-position: .5rem .5rem;
+        background-size: 2rem 2rem; }
         .ispDetails .ispAllList .ispSearchBar .searchBox:focus {
           background-image: none; }
     .ispDetails .ispAllList .ispNames {
-      margin-top: 40px; }
+      margin-top: 4rem; }
+      @media only screen and (max-width: 56.25em) {
+        .ispDetails .ispAllList .ispNames .arrow {
+          margin-top: 1rem;
+          transform: rotate(-90deg);
+          -webkit-transform: rotate(-90deg);
+          -moz-transform: rotate(-90deg);
+          -ms-transform: rotate(-90deg);
+          -o-transform: rotate(-90deg); } }
     .ispDetails .ispAllList .ispSorting {
       width: 100%;
       position: sticky;
       z-index: 3;
       background: #fff;
-      height: 35px;
-      bottom: 0px;
-      padding-top: 10px;
+      height: 3.5rem;
+      bottom: 0;
+      padding-top: 1rem;
       display: flex;
       justify-content: space-around; }
       .ispDetails .ispAllList .ispSorting .sortBtn, .ispDetails .ispAllList .ispSorting .sortOptions {
         color: #0B6623;
-        padding: 5px 10px;
+        padding: .5rem 1rem;
         cursor: pointer;
-        font-size: 14px;
-        border-radius: 5px;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        -ms-border-radius: 5px;
-        -o-border-radius: 5px; }
+        font-size: 1.4rem;
+        border-radius: .5rem;
+        -webkit-border-radius: .5rem;
+        -moz-border-radius: .5rem;
+        -ms-border-radius: .5rem;
+        -o-border-radius: .5rem; }
       .ispDetails .ispAllList .ispSorting .sortOptions {
         border: 1pt solid #d8d8d8; }
         .ispDetails .ispAllList .ispSorting .sortOptions input[type=radio] {
-          margin-right: 10px; }
+          margin-right: 1rem; }
   .ispDetails .ispInfo {
-    margin-top: 20px;
+    margin-top: 2rem;
     flex: 0 0 40%;
     position: relative; }
+    @media only screen and (max-width: 56.25em) {
+      .ispDetails .ispInfo {
+        width: 90%;
+        margin: 3rem auto; } }
     .ispDetails .ispInfo--empty {
       position: absolute;
       display: flex;
@@ -118,13 +171,13 @@ body {
       display: flex;
       background: #c9fdc9;
       border: 1.5pt solid #395830;
-      padding: 2px 10px;
-      border-radius: 5px;
-      -webkit-border-radius: 5px;
-      -moz-border-radius: 5px;
-      -ms-border-radius: 5px;
-      -o-border-radius: 5px;
-      margin-bottom: 10px;
+      padding: .2rem 1rem;
+      border-radius: .5rem;
+      -webkit-border-radius: .5rem;
+      -moz-border-radius: .5rem;
+      -ms-border-radius: .5rem;
+      -o-border-radius: .5rem;
+      margin-bottom: 1rem;
       align-items: center;
       justify-content: center; }
     .ispDetails .ispInfo .ispBasicInfo {
@@ -134,48 +187,48 @@ body {
         display: flex;
         justify-content: space-evenly; }
         .ispDetails .ispInfo .ispBasicInfo .ispOtherInfo .ispImage {
-          width: 150px;
-          height: 150px; }
+          width: 15rem;
+          height: 15rem; }
         .ispDetails .ispInfo .ispBasicInfo .ispOtherInfo .ispBasicInfoDetails {
           display: flex;
           flex-direction: column;
           justify-content: space-evenly; }
           .ispDetails .ispInfo .ispBasicInfo .ispOtherInfo .ispBasicInfoDetails .fas {
-            margin-right: 10px; }
+            margin-right: 1rem; }
     .ispDetails .ispInfo .buttons {
       display: flex;
       justify-content: space-between; }
       .ispDetails .ispInfo .buttons .btn {
         color: #0B6623;
-        padding: 5px 10px;
+        padding: .5rem 1rem;
         cursor: pointer;
-        font-size: 14px;
-        border-radius: 5px;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        -ms-border-radius: 5px;
-        -o-border-radius: 5px; }
+        font-size: 1.4rem;
+        border-radius: .5rem;
+        -webkit-border-radius: .5rem;
+        -moz-border-radius: .5rem;
+        -ms-border-radius: .5rem;
+        -o-border-radius: .5rem; }
       .ispDetails .ispInfo .buttons .fas {
-        margin-right: 10px; }
+        margin-right: 1rem; }
 
 .ispName {
   display: flex;
   background: #c9fdc9;
   border: 1.5pt solid #395830;
-  padding: 2px 10px;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  margin-bottom: 10px;
+  padding: .2rem 1rem;
+  border-radius: .5rem;
+  -webkit-border-radius: .5rem;
+  -moz-border-radius: .5rem;
+  -ms-border-radius: .5rem;
+  -o-border-radius: .5rem;
+  margin-bottom: 1rem;
   align-items: center; }
   .ispName :nth-child(2) {
-    margin-left: 10px; }
+    margin-left: 1rem; }
   .ispName :nth-child(3) {
     margin-left: auto; }
   .ispName :nth-child(4) {
-    padding-left: 10px;
+    padding-left: 1rem;
     cursor: pointer; }
 
 .selected {
