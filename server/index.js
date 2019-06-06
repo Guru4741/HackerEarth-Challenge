@@ -42,6 +42,6 @@ app.post('/download', (req, res) => {
 
 })
 
-app.listen(7676, () => {
+app.listen((process.env.PORT || 7676), () => {
     console.log('Server started');
 })
