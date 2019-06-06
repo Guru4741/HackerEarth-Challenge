@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/png" href="./images/favicon.png">
+    <title>ISP Details</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <a href="#"><img src="imgs/logo.99b694ff06072c024cecc6b06dde1171.jpg" alt="HackerEarth" class="logo"></a>
+        <h1 class="brandName">ISP HackerEarth</h1>
+        <h2 class="tagLine">&mdash; searching ISP made easy!</h2>
+        <div class="header__isp">
+            <p class="header__totalIsp"><span>Total ISP:</span> 09</p>
+            <p class="header__totalHits"><span>API Hits:</span> 748</p>
+        </div>
+    </header>
+
+    <!-- ISP Sections -->
+    <section class="ispDetails">
+        <div class="ispAllList">
+            <div class="ispSearchBar">
+                <p><span><i class="fas fa-home"></i></span> Home</p>
+                <input type="text" class="searchBox" placeholder="Search (by ISP name, price, rating)">
+            </div>
+            <div class="ispNames"></div>
+            <div class="ispSorting">
+                <button class="sortBtn btn"><span><i class="fas fa-layer-group"></i></span> Sort By</button>
+                <fieldset class="sortOptions">
+                    <input type="radio" name="sorting" value="speed">Speed
+                    <input type="radio" name="sorting" value="price">Price
+                </fieldset>
+            </div>
+        </div>
+
+
+        <div class="ispInfo">
+            <div class="ispInfo--empty">
+                <p>Nothing Selected Yet</p>
+            </div>
+            <div class="ispInfo--notEmpty">
+                <div class="ispBasicInfo">
+                    <div class="ispInfoName">
+                        <p>Airtel</p>
+                    </div>
+                    <div class="ispOtherInfo">
+                        <img class="ispImage" src="imgs/airtel.e29eb62494b772cfb0a563871faf8525.png" alt="Logo">
+                        <div class="ispBasicInfoDetails">
+                            <p><span><i class="fas fa-wifi"></i></span>Max. Speed: 50mbps</p>
+                            <p><span><i class="fas fa-phone"></i></span>080-44444121</p>
+                            <p><span><i class="fas fa-envelope"></i></span>121@airtel.com</p>
+                            <p><span><i class="fas fa-coins"></i></span>Min. Plan: 450 /-</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="ratings">
+                    <p>Rating: <span>4</span></p>
+                </div>
+                <div class="desc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus minima vitae error inventore
+                    veritatis ipsa nisi, repudiandae nesciunt quidem optio doloribus. Ullam necessitatibus unde quaerat
+                    molestias autem assumenda, aliquid placeat?
+                </div>
+                <div class="buttons">
+                    <button class="buttons__link btn"><span><i class="fas fa-link"></i></span>Link</button>
+                    <button class="buttons__share btn"><span><i class="fas fa-share"></i></span>Share</button>
+                    <button class="buttons__download btn"><span><i
+                                class="fas fa-cloud-download-alt"></i></span>Download</button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+<script type="text/javascript" src="bundle.js"></script></body>
+
+</html>

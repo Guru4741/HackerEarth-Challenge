@@ -1,3 +1,5 @@
+import '../css/style.scss';
+
 //Getting DOM Elements
 const ispNames = document.querySelector('.ispNames');
 const ispInfo = document.querySelector('.ispInfo');
@@ -16,7 +18,7 @@ const ISPs = [];
 checkSelection();
 
 //Fetch Call to API
-fetch('http://localhost:7676')  //Server is running on port 7676
+fetch('http://localhost:7676/data')  //Server is running on port 7676
     .then(data => data.json())
     .then(res => {
 
@@ -161,13 +163,13 @@ homeIcom.addEventListener('click', () => {
 //Attaching Event to Sort Button
 sortBtn.addEventListener('click', () => {
     const sortBy = document.querySelector('input[name="sorting"]:checked').value;
-    if(sortBy === 'price'){
-        ISPs.sort(function(a,b){return a.price - b.price });
+    if (sortBy === 'price') {
+        ISPs.sort(function (a, b) { return a.price - b.price });
         ispNames.innerHTML = "";
         ISPs.forEach(each => listISPNames(each))
     }
-    if(sortBy === 'speed'){
-        ISPs.sort(function(a,b){return a.speed - b.speed });
+    if (sortBy === 'speed') {
+        ISPs.sort(function (a, b) { return a.speed - b.speed });
         ispNames.innerHTML = "";
         ISPs.forEach(each => listISPNames(each))
     }

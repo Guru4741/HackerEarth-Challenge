@@ -4,7 +4,8 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "watch:sass": "node-sass style.scss style.css -w",
+    "build": "webpack --mode production",
+    "watch:sass": "node-sass ./src/css/style.scss ./src/css/style.css -w",
     "devserver": "live-server",
     "start": "npm run devserver & npm run watch:sass"
   },
@@ -12,7 +13,17 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "css-loader": "^2.1.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^4.0.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
     "live-server": "^1.2.1",
-    "node-sass": "^4.12.0"
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.33.0",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.6.0"
   }
 }

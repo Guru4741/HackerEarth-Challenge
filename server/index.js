@@ -12,8 +12,13 @@ const data = require('./public/data');
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public/dist')));
 
 app.get('/', (req, res) => {
+
+})
+
+app.get('/data', (req, res) => {
     res.json(data);
 })
 

@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css');
+
 *,
 *::after,
 *::before {
@@ -172,7 +175,7 @@ $background-color: #98FB98;
                 -o-border-radius: .5rem;
                 padding-left: 2.5rem;
 
-                background-image:url("./images/search.png");
+                background-image:url("../images/search.png");
                 background-repeat:no-repeat;
                 background-position: .5rem .5rem;
                 background-size: 2rem 2rem;
