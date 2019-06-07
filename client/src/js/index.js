@@ -84,7 +84,7 @@ function displayISP(e) {
     const ispRatings = document.querySelector('.ratings');
     const ispDescription = document.querySelector('.desc');
 
-    ispImage.src = `http://localhost:7676${e.imageURL}`;
+    ispImage.src = `${e.imageURL}`;
     ispName.innerText = e.name;
     ispRatings.innerText = `Ratings: ${e.ratings}`;
     ispDescription.innerText = e.desc;
@@ -96,7 +96,7 @@ function downloadPDF() {
     const ispName = document.querySelector('.ispInfoName');
     const isp = ISPs.filter(each => each.name === ispName.innerText);
 
-    fetch('http://localhost:7676/download', {
+    fetch('/download', {
         method: "POST",
         body: JSON.stringify({ "ISP": isp }),
         headers: {
