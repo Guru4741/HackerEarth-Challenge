@@ -18,7 +18,7 @@ const ISPs = [];
 checkSelection();
 
 //Fetch Call to API
-fetch('http://localhost:7676/data')  //Server is running on port 7676
+fetch('/data')  //Server is running on port 7676
     .then(data => data.json())
     .then(res => {
 
